@@ -1,8 +1,14 @@
 import { Router } from 'express';
+import RegisterService from '../database/services/register';
+import Account from '../database/models/account';
+import User from '../database/models/user';
 import RegisterController from '../controllers/register';
 
 const register = Router();
 
-register.post('/', RegisterController.register);
+const registerService = new RegisterService(User, Account);
+const registerController = new RegisterController(registerService);
+
+register.post('/', registerController.register);
 
 export default register;
