@@ -14,6 +14,8 @@ app.post('/', async (req: Request, res: Response) => {
 
 app.use('/register', registerRoute);
 
+app.use(errorHandler);
+
 app.listen(PORT, () => {
   console.log(`Running at port ${PORT}`);
 });
