@@ -1,5 +1,5 @@
 import { NextFunction, Response, Request } from 'express';
-import LoginService from '../database/services/login';
+import LoginService from '../services/login';
 
 class LoginController {
   private _loginService: LoginService;

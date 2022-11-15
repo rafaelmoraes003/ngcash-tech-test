@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import RegisterService from '../database/services/register';
+import RegisterService from '../services/register';
 
 class RegisterController {
   private _registerService: RegisterService;

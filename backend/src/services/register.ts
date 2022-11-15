@@ -1,12 +1,12 @@
 import { ModelStatic } from 'sequelize';
-import IUser, { zodUserSchema } from '../../types/IUser';
-import validateBody from '../../utils/validateBody';
-import registerTransaction from '../../utils/registerTransaction';
-import StatusCodes from '../../types/StatusCodes';
-import validateUsername from '../../utils/validateUsername';
-import getToken from '../../utils/getToken';
-import User from '../models/user';
-import Account from '../models/account';
+import IUser, { zodUserSchema } from '../types/IUser';
+import validateBody from '../utils/validateBody';
+import registerTransaction from '../utils/registerTransaction';
+import StatusCodes from '../types/StatusCodes';
+import validateUsername from '../utils/validateUsername';
+import getToken from '../utils/getToken';
+import User from '../database/models/user';
+import Account from '../database/models/account';
 
 class RegisterService {
   private _userModel: ModelStatic<User>;

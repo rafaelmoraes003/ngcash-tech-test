@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import RegisterService from '../database/services/register';
+import RegisterService from '../services/register';
 import Account from '../database/models/account';
 import User from '../database/models/user';
 import RegisterController from '../controllers/register';

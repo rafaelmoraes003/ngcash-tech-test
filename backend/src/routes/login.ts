@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import LoginController from '../controllers/login';
-import LoginService from '../database/services/login';
+import LoginService from '../services/login';
 import User from '../database/models/user';
 
 const login = Router();

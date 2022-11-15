@@ -1,11 +1,11 @@
 import { ModelStatic } from 'sequelize';
-import validateUser from '../../utils/validateUser';
-import IUser from '../../types/IUser';
-import User from '../models/user';
-import getPasswordHash from '../../utils/getPasswordHash';
-import comparePasswords from '../../utils/comparePasswords';
-import getToken from '../../utils/getToken';
-import StatusCodes from '../../types/StatusCodes';
+import validateUser from '../utils/validateUser';
+import IUser from '../types/IUser';
+import User from '../database/models/user';
+import getPasswordHash from '../utils/getPasswordHash';
+import comparePasswords from '../utils/comparePasswords';
+import getToken from '../utils/getToken';
+import StatusCodes from '../types/StatusCodes';
 
 class LoginService {
   private _userModel: ModelStatic<User>;
