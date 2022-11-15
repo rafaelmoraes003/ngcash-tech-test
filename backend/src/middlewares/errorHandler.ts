@@ -10,7 +10,7 @@ const errorHandler = (
 ) => {
   res
     .status(err.statusCode ? err.statusCode : StatusCodes.SERVER_ERROR)
-    .json({ message: err.message });
+    .json({ error: err.message });
 };
 
 export default errorHandler;
