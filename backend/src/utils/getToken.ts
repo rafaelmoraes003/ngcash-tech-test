@@ -8,7 +8,7 @@ const JWT_CONFIG = {
   algorithm: 'HS256',
 };
 
-const getToken = (payload: User) => {
+const getToken = (payload: User): string => {
   const token = jwt.sign({ ...payload }, JWT_SECRET, JWT_CONFIG as jwt.SignOptions);
   return token;
 };
