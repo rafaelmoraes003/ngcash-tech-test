@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import errorHandler from './middlewares/errorHandler';
 import StatusCodes from './types/StatusCodes';
 import registerRoute from './routes/register';
+import loginRoute from './routes/login';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -13,6 +14,7 @@ app.post('/', async (req: Request, res: Response) => {
 });
 
 app.use('/register', registerRoute);
+app.use('/login', loginRoute);
 
 app.use(errorHandler);
 
