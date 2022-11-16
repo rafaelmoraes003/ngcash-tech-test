@@ -17,7 +17,7 @@ const registerTransaction = async (
   const { username, password } = userData;
   try {
     const result = await sequelize.transaction(async (t) => {
-      const { id } = await accountModel.create({ balance: 100 }, { transaction: t });
+      const { id } = await accountModel.create({ balance: 10000 }, { transaction: t });
       const hashedPassword = getPasswordHash(password);
       const newUser = await userModel.create({
         username, password: hashedPassword, accountId: id,
