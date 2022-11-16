@@ -33,6 +33,20 @@ class TransactionController {
       next(error);
     }
   };
+
+  public getByDateAndType = async (req: CustomRequest, res: Response, next: NextFunction) => {
+    const { userId } = req;
+    const { date, type } = req.query;
+    try {
+      const { code, data } = await this._transactionService.getByDateAndType(
+        Number(userId),
+        { date, type } as IDateAndTransaction,
+      );
+      return res.status(code).json(data);
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export default TransactionController;
