@@ -9,6 +9,6 @@ const account = Router();
 const accountService = new AccountService(Account);
 const accountController = new AccountController(accountService);
 
-account.get('/', auth, accountController.getById);
+account.get('/', auth, accountController.getUserAccount);
 
 export default account;

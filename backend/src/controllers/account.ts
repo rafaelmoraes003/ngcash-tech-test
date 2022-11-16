@@ -9,7 +9,7 @@ class AccountController {
     this._accountService = accountService;
   }
 
-  public getById = async (req: CustomRequest, res: Response, next: NextFunction) => {
+  public getUserAccount = async (req: CustomRequest, res: Response, next: NextFunction) => {
     const { userId } = req;
     try {
       const { code, data } = await this._accountService.getUserAccount(Number(userId));
