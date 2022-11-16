@@ -30,6 +30,18 @@ class TransactionService {
     return { code: StatusCodes.OK, data: newTransaction };
   }
 
+  public async getById(userId: number) {
+    const transactions = await this._transactionModel.findAll({
+      where: {
+        [Op.or]: [
+          { debitedAccountId: userId },
+          { creditedAccountId: userId },
+        ],
+      },
+      include: userJOIN,
+    });
+    return { code: StatusCodes.OK, data: transactions };
+  }
 }
 
 export default TransactionService;
