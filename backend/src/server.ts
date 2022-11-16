@@ -18,6 +18,7 @@ app.post('/', async (req: Request, res: Response) => {
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/account', accountRoute);
+app.use('/transactions', transactionRoute);
 
 app.use(errorHandler);
 
