@@ -1,6 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
 import Account from './account';
+import User from './user';
 
 class Transaction extends Model {
   id!: number;
@@ -45,6 +46,14 @@ Transaction.init({
   sequelize: db,
   modelName: 'Transactions',
   timestamps: false,
+});
+
+Transaction.belongsTo(User, {
+  foreignKey: 'debitedAccountId', as: 'debitedAccountUsername',
+});
+
+Transaction.belongsTo(User, {
+  foreignKey: 'creditedAccountId', as: 'creditedAccountUsername',
 });
 
 export default Transaction;
