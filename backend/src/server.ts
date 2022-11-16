@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import errorHandler from './middlewares/errorHandler';
 import StatusCodes from './types/StatusCodes';
 import registerRoute from './routes/register';
@@ -10,6 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/', async (req: Request, res: Response) => {
   res.status(StatusCodes.OK).json({ ok: true });
