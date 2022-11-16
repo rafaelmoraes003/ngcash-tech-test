@@ -23,6 +23,16 @@ class TransactionController {
       next(error);
     }
   };
+
+  public getById = async (req: CustomRequest, res: Response, next: NextFunction) => {
+    const { userId } = req;
+    try {
+      const { code, data } = await this._transactionService.getById(Number(userId));
+      return res.status(code).json(data);
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export default TransactionController;
