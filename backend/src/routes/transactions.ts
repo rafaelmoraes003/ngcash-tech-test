@@ -11,7 +11,7 @@ const transactionService = new TransactionService(User, Transaction);
 const transactionController = new TransactionController(transactionService);
 
 transaction.post('/', auth, transactionController.create);
-transaction.get('/', auth, transactionController.getById);
+transaction.get('/', auth, transactionController.getAllByUserId);
 transaction.get('/filter', auth, transactionController.getByDateAndType);
 
 export default transaction;

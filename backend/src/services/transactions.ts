@@ -30,7 +30,7 @@ class TransactionService {
     return { code: StatusCodes.OK, data: newTransaction };
   }
 
-  public async getById(userId: number) {
+  public async getAllByUserId(userId: number) {
     const transactions = await this._transactionModel.findAll({
       where: {
         [Op.or]: [

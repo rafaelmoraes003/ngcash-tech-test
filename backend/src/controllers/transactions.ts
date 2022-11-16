@@ -24,10 +24,10 @@ class TransactionController {
     }
   };
 
-  public getById = async (req: CustomRequest, res: Response, next: NextFunction) => {
+  public getAllByUserId = async (req: CustomRequest, res: Response, next: NextFunction) => {
     const { userId } = req;
     try {
-      const { code, data } = await this._transactionService.getById(Number(userId));
+      const { code, data } = await this._transactionService.getAllByUserId(Number(userId));
       return res.status(code).json(data);
     } catch (error) {
       next(error);
