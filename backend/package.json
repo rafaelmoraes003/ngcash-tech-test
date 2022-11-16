@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "npm run build && node ./build/server.js",
     "dev": "tsnd src/server.ts",
-    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "prestart": "npm run build && npm run db:reset",
     "lint": "eslint ./src --ext .ts"
   },
