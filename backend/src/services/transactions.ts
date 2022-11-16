@@ -46,11 +46,22 @@ class TransactionService {
   public async getByDateAndType(userId: number, filters: IDateAndTransaction) {
     const { date, type } = filters;
     validateBody({ date, type }, zodDateAndTransactionSchema);
+
     const transactionTye = type === 'cash-out'
       ? 'debitedAccountId' : 'creditedAccountId';
+
     const transactions = await this._transactionModel.findAll({
-      include: userJOIN,
-      where: { [transactionTye]: userId },
+      ...(type === 'all' && {
+        where: {
+          [Op.or]: [
+            { debitedAccountId: userId },
+            { creditedAccountId: userId },
+          ],
+        },
+      }),
+      ...(type !== 'all' && {
+        where: { [transactionTye]: userId },
+      }),
       order: [
         ['createdAt', date],
       ],
