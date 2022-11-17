@@ -20,13 +20,13 @@ Ao inicializar os serviços através do `docker-compose`, serão criados 3 usuá
 ]
 ```
 
-OBS: As senhas no banco de dados estão em formato de hash
+OBS: As senhas no banco de dados estão em formato de hash.
 
 ## TELAS
 
 Existem 4 telas na aplicação, sendo elas:
 
-- ### `/login` - Realizar login.
+- ### `/login` - Realização login.
 - ### `/register` - Criação de novo usuário.
 - ### `/home` - Tela principal, onde é possível realizar operações bancárias e consultar saldo do usuário.
 - ### `/transactions` - Listagem de transações bancárias e opções de filtragem para elas.
