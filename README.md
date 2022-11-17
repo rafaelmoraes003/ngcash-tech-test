@@ -26,7 +26,7 @@ OBS: As senhas no banco de dados estão em formato de hash.
 
 Existem 4 telas na aplicação, sendo elas:
 
-- ### `/login` - Realização login.
+- ### `/login` - Realização de login.
 - ### `/register` - Criação de novo usuário.
 - ### `/home` - Tela principal, onde é possível realizar operações bancárias e consultar saldo do usuário.
 - ### `/transactions` - Listagem de transações bancárias e opções de filtragem para elas.
