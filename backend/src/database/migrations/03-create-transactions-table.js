@@ -9,7 +9,7 @@ module.exports = {
       debitedAccountId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
+        references: {
           model: 'Accounts',
           key: 'id',
         },
@@ -19,7 +19,7 @@ module.exports = {
       creditedAccountId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
+        references: {
           model: 'Accounts',
           key: 'id',
         },
@@ -34,10 +34,10 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
         defaulValue: Sequelize.NOW,
-      }
+      },
     });
   },
   down: async (queryInterface, _Sequelize) => {
     await queryInterface.dropTable('Transactions');
   },
-}
+};
