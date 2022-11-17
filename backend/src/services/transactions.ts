@@ -62,6 +62,7 @@ class TransactionService {
       ...(type !== 'all' && {
         where: { [transactionTye]: userId },
       }),
+      include: userJOIN,
       order: [
         ['createdAt', date],
       ],
