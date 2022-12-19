@@ -1,16 +1,18 @@
-# NGCASH TESTE TÉCNICO
+# NGCASH TECH TEST
 
-## CONFIGURAÇÕES NECESSÁRIAS
+## TECHNOLOGIES USED
 
-- docker-compose a partir da versão 1.29.2
+## NECESSARY SETTINGS
 
-## COMO RODAR A APLICAÇÃO
+- `docker-compose` from version 1.29.2
 
-Na pasta raiz do projeto, utilize o comando `docker-compose up -d` no terminal e espere os serviços serem inicializados. O Front-End estará localizado na porta 3000, o Back-End na porta 3001 e o banco de dados (Postgresql) na porta 5432.
+## HOW TO RUN THE APPLICATION
 
-## SOBRE O BANCO DE DADOS E O SERVIDOR
+In the root folder of the project, use the `docker-compose up -d` command in the terminal and wait for the services to start up. The Front-End will be located on port 3000, the Back-End on port 3001 and the database (Postgresql) on port 5432.
 
-Ao inicializar os serviços através do `docker-compose`, serão criados 3 usuários, que são estes:
+## ABOUT THE DATABASE AND SERVER
+
+When initializing the services through `docker-compose`, 3 users will be created, which are these:
 
 ```JavaScript
 [
@@ -20,13 +22,13 @@ Ao inicializar os serviços através do `docker-compose`, serão criados 3 usuá
 ]
 ```
 
-OBS: As senhas no banco de dados estão em formato de hash.
+NOTE: The passwords in the database are hashed.
 
-## TELAS
+## SCREENS
 
-Existem 4 telas na aplicação, sendo elas:
+There are 4 screens in the application, namely:
 
-- ### `/login` - Realização de login.
-- ### `/register` - Criação de novo usuário.
-- ### `/home` - Tela principal, onde é possível realizar operações bancárias e consultar saldo do usuário.
-- ### `/transactions` - Listagem de transações bancárias e opções de filtragem para elas.
+- ### `/login` - Performing a login.
+- ### `/register` - Creation of a new user.
+- ### `/home` - Main screen, where you can perform banking operations and check the user's balance.
+- ### `/transactions` - Listing of bank transactions and filtering options for them.
